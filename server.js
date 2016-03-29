@@ -9,7 +9,7 @@ app.get('/att', function (req, res) {
 app.set('ipaddress', process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080);
 
-var server = app.listen(app.get('port'), app.get('ipaddress'), (err) => {
+var server = app.listen(app.get('port'), app.get('ipaddress'), function(err) {
 
   var host = server.address().address
   var port = server.address().port
