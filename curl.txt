@@ -1,0 +1,18 @@
+curl --request PUT --include \
+--header "Content-Type: application/json" \
+--header "X-M2X-KEY: e3fa133fa6619c6f6a72a0f7af37be71" \
+--data '{"value": 80}' \
+'http://api-m2x.att.com/v2/devices/94591963ac49d494167868470cfa53a8/streams/speed/value?pretty=true'
+
+
+curl --request GET --header "Content-Type: application/json" \
+--header "X-M2X-KEY: e3fa133fa6619c6f6a72a0f7af37be71" \
+'http://api-m2x.att.com/v2/devices/94591963ac49d494167868470cfa53a8/streams/speed/values?pretty=true'
+
+
+
+curl --request POST --include \
+--header "Content-Type: application/json" \
+--header "X-M2X-KEY: e3fa133fa6619c6f6a72a0f7af37be71" \
+--data '{"name": "trigger1", "stream": "presstime", "condition": ">", "value": "5", "callback_url": "http://127.0.0.1:3030/att", "status": "enabled", "send_location": "true"}' \
+http://api-m2x.att.com/v2/devices/94591963ac49d494167868470cfa53a8/triggers
