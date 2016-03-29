@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.get('/att', function (req, res) {
-   res.send('hello att');
+   res.status(202).send('success');
    console.log('hello att', new Date());
 });
 

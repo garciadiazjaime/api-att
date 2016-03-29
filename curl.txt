@@ -14,5 +14,25 @@ curl --request GET --header "Content-Type: application/json" \
 curl --request POST --include \
 --header "Content-Type: application/json" \
 --header "X-M2X-KEY: e3fa133fa6619c6f6a72a0f7af37be71" \
---data '{"name": "trigger1", "stream": "presstime", "condition": ">", "value": "5", "callback_url": "http://127.0.0.1:3030/att", "status": "enabled", "send_location": "true"}' \
+--data '{"name": "trigger1", "stream": "presstime", "condition": ">", "value": "5", "callback_url": "http://api-attmint.rhcloud.com/att", "status": "enabled", "send_location": "true"}' \
 http://api-m2x.att.com/v2/devices/94591963ac49d494167868470cfa53a8/triggers
+
+{
+  "id":"AVPD-Eu4GGnowjlN-e4u",
+  "name":"trigger1",
+  "conditions":{
+    "presstime":{"gt":5.0}
+  },
+  "frequency":"single",
+  "timeframe":0,
+  "callback_url":"http://api-attmint.rhcloud.com/att",
+  "url":"http://api-m2x.att.com/v2/devices/94591963ac49d494167868470cfa53a8/triggers/AVPD-Eu4GGnowjlN-e4u",
+  "status":"enabled",
+  "activated":false,
+  "send_location":true,
+  "notify_on_reset":false,
+  "custom_data":null,
+  "payload_version":2,
+  "created":"2016-03-29T20:02:22.775Z",
+  "updated":"2016-03-29T20:02:22.775Z"
+}
