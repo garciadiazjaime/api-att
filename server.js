@@ -6,7 +6,10 @@ app.get('/att', function (req, res) {
    console.log('hello att');
 });
 
-var server = app.listen(3030, function () {
+app.set('ipaddress', process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080);
+
+var server = app.listen(app.get('port'), app.get('ipaddress'), (err) => {
 
   var host = server.address().address
   var port = server.address().port
