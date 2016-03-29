@@ -3,7 +3,7 @@ var app = express();
 
 app.get('/att', function (req, res) {
    res.send('hello att');
-   console.log('hello att');
+   console.log('hello att', new Date());
 });
 
 app.set('ipaddress', process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
