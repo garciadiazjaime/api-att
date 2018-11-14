@@ -39,4 +39,14 @@ http://api-m2x.att.com/v2/devices/94591963ac49d494167868470cfa53a8/triggers
 
 
 curl --request POST \
-http://127.0.0.1:8080/att
+http://api-attmint.rhcloud.com/att
+
+
+
+var request = require('request');
+var url ='http://requestb.in/1ftoxvm1'
+request(url, function (error, response, body) {
+  if (!error) {
+    console.log(body);
+  }
+});
